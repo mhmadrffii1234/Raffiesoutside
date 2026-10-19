@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Detail Produk | Koperasi Sekolah</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.header{
+    min-height:70px;
+    padding:12px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    background:#0755b8;
+    color:white;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+.logo h2{
+    color:#0755b8;
+    font-size:18px;
+}
+
+.back{
+    text-decoration:none;
+    color:#0755b8;
+    font-weight:bold;
+}
+
+.container{
+    width:88%;
+    max-width:1100px;
+    margin:45px auto;
+}
+
+.detail{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.image-box{
+    height:500px;
+    background:#eee;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.info small{
+    color:#777;
+}
+
+.info h1{
+    color:#123f88;
+    font-size:32px;
+    margin:15px 0;
+}
+
+.rating{
+    color:#ffb400;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#0755b8;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.row span{
+    color:#777;
+}
+
+.sizes{
+    display:flex;
+    gap:8px;
+    margin:20px 0;
+}
+
+.size{
+    border:1px solid #ccc;
+    background:white;
+    padding:10px 16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.size.active{
+    background:#0755b8;
+    color:white;
+    border-color:#0755b8;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    border:none;
+    background:#0755b8;
+    color:white;
+    padding:14px;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background:#06458f;
+}
+
+footer{
+    background:#092d5c;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+}
+
+@media(max-width:700px){
+
+    .detail{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .image-box{
+        height:350px;
+    }
+
+    .info h1{
+        font-size:25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+
+<div class="logo-icon">
+🏫
+</div>
+
+<h2>
+KOPERASI SEKOLAH
+</h2>
+
+</div>
+
+<a
+href="index.html#produk"
+class="back"
+>
+← Kembali ke Produk
+</a>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="detail">
+
+<div class="image-box">
+
+<img
+id="productImage"
+src=""
+alt="Produk"
+>
+
+</div>
+
+
+<div class="info">
+
+<small>
+Beranda / Produk / Detail
+</small>
+
+<h1 id="productName">
+Produk
+</h1>
+
+<div class="rating">
+★★★★★
+</div>
+
+<div
+class="price"
+id="productPrice"
+>
+Rp0
+</div>
+
+
+<div class="row">
+
+<span>
+Kategori
+</span>
+
+<b id="productCategory">
+-
+</b>
+
+</div>
+
+
+<div class="row">
+
+<span>
+Bahan
+</span>
+
+<b id="productMaterial">
+-
+</b>
+
+</div>
+
+
+<div class="row">
+
+<span>
+Warna
+</span>
+
+<b id="productColor">
+-
+</b>
+
+</div>
+
+
+<div class="row">
+
+<span>
+Stok
+</span>
+
+<b id="productStock">
+-
+</b>
+
+</div>
+
+
+<h3 style="margin-top:25px;">
+Pilih Ukuran
+</h3>
+
+
+<div class="sizes">
+
+<button
+class="size active"
+onclick="selectSize(this)"
+>
+S
+</button>
+
+<button
+class="size"
+onclick="selectSize(this)"
+>
+M
+</button>
+
+<button
+class="size"
+onclick="selectSize(this)"
+>
+L
+</button>
+
+<button
+class="size"
+onclick="selectSize(this)"
+>
+XL
+</button>
+
+<button
+class="size"
+onclick="selectSize(this)"
+>
+XXL
+</button>
+
+</div>
+
+
+<button
+class="btn"
+onclick="addProduct()"
+>
+🛒 Tambahkan ke Keranjang
+</button>
+
+
+<button
+class="btn"
+style="background:#eef4ff;color:#0755b8;"
+onclick="goHome()"
+>
+← Kembali Belanja
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Koperasi Sekolah.
+All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+/* AMBIL DATA DARI URL */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const name =
+    params.get("name") ||
+    "Produk";
+
+
+const price =
+    Number(
+        params.get("price") || 0
+    );
+
+
+const image =
+    params.get("image") ||
+    "";
+
+
+const category =
+    params.get("category") ||
+    "-";
+
+
+const material =
+    params.get("material") ||
+    "-";
+
+
+const color =
+    params.get("color") ||
+    "-";
+
+
+const stock =
+    params.get("stock") ||
+    "0";
+
+
+document
+.getElementById("productName")
+.innerText = name;
+
+
+document
+.getElementById("productPrice")
+.innerText =
+    new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(price);
+
+
+document
+.getElementById("productImage")
+.src = image;
+
+
+document
+.getElementById("productCategory")
+.innerText = category;
+
+
+document
+.getElementById("productMaterial")
+.innerText = material;
+
+
+document
+.getElementById("productColor")
+.innerText = color;
+
+
+document
+.getElementById("productStock")
+.innerText =
+    stock + " pcs";
+
+
+/* PILIH UKURAN */
+
+function selectSize(button){
+
+    document
+    .querySelectorAll(".size")
+    .forEach(item=>{
+
+        item.classList.remove(
+            "active"
+        );
+
+    });
+
+    button.classList.add("active");
+
+}
+
+
+/* TAMBAH PRODUK */
+
+function addProduct(){
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("cart") ||
+            "[]"
+        );
+
+
+    let existing =
+        cart.find(
+            item =>
+            item.name === name
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            name:name,
+            price:price,
+            image:image,
+            quantity:1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    alert(
+        name +
+        " berhasil ditambahkan ke keranjang."
+    );
+
+
+    window.location.href =
+        "index.html#keranjang";
+
+}
+
+
+/* KEMBALI */
+
+function goHome(){
+
+    window.location.href =
+        "index.html#produk";
+
+}
+
+</script>
+
+</body>
+
+</html>
