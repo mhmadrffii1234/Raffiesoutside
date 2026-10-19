@@ -1,0 +1,2909 @@
+<!DOCTYPE html>  <html lang="id">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Koperasi Sekolah | Seragam & Perlengkapan</title>  <style>  
+  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+}  
+  
+html{  
+    scroll-behavior:smooth;  
+}  
+  
+body{  
+    font-family:Arial,Helvetica,sans-serif;  
+    background:#f5f7fb;  
+    color:#222;  
+}  
+  
+/* ================= LOGIN ================= */  
+  
+.login-page{  
+    position:fixed;  
+    inset:0;  
+    background:linear-gradient(135deg,#0755b8,#092d5c);  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    z-index:99999;  
+}  
+  
+.login-box{  
+    width:90%;  
+    max-width:400px;  
+    background:#fff;  
+    padding:35px 30px;  
+    border-radius:15px;  
+    box-shadow:0 10px 35px rgba(0,0,0,.25);  
+}  
+  
+.login-logo{  
+    width:65px;  
+    height:65px;  
+    margin:0 auto 15px;  
+    border-radius:12px;  
+    background:#0755b8;  
+    color:white;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    font-size:32px;  
+}  
+  
+.login-box h2{  
+    text-align:center;  
+    color:#073b87;  
+    margin-bottom:8px;  
+}  
+  
+.login-box p{  
+    text-align:center;  
+    color:#777;  
+    font-size:13px;  
+    margin-bottom:25px;  
+}  
+  
+.login-group{  
+    margin-bottom:16px;  
+}  
+  
+.login-group label{  
+    display:block;  
+    font-size:13px;  
+    font-weight:bold;  
+    margin-bottom:7px;  
+}  
+  
+.login-group input{  
+    width:100%;  
+    padding:12px;  
+    border:1px solid #ddd;  
+    border-radius:7px;  
+    outline:none;  
+}  
+  
+.login-group input:focus{  
+    border-color:#0755b8;  
+}  
+  
+.login-btn{  
+    width:100%;  
+    padding:13px;  
+    border:0;  
+    border-radius:7px;  
+    background:#0755b8;  
+    color:white;  
+    font-weight:bold;  
+    cursor:pointer;  
+}  
+  
+.login-btn:hover{  
+    background:#06458f;  
+}  
+  
+.login-error{  
+    display:none;  
+    background:#ffeaea;  
+    color:#d62828;  
+    padding:10px;  
+    border-radius:6px;  
+    font-size:12px;  
+    text-align:center;  
+    margin-bottom:15px;  
+}  
+  
+.login-info{  
+    margin-top:18px;  
+    text-align:center;  
+    font-size:11px;  
+    color:#888;  
+}  
+  
+/* ================= HEADER ================= */  
+  
+header{  
+    background:#fff;  
+    position:sticky;  
+    top:0;  
+    z-index:1000;  
+    box-shadow:0 2px 10px rgba(0,0,0,.08);  
+}  
+  
+.header-top{  
+    min-height:75px;  
+    padding:12px 6%;  
+    display:flex;  
+    align-items:center;  
+    gap:25px;  
+}  
+  
+.logo{  
+    display:flex;  
+    align-items:center;  
+    gap:10px;  
+    min-width:210px;  
+}  
+  
+.logo-icon{  
+    width:45px;  
+    height:45px;  
+    border-radius:8px;  
+    background:#0755b8;  
+    color:white;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    font-size:23px;  
+}  
+  
+.logo-text h2{  
+    font-size:17px;  
+    color:#0755b8;  
+}  
+  
+.logo-text small{  
+    color:#777;  
+    font-size:10px;  
+}  
+  
+.search-box{  
+    flex:1;  
+    max-width:600px;  
+    display:flex;  
+}  
+  
+.search-box input{  
+    width:100%;  
+    padding:13px 16px;  
+    border:1px solid #ddd;  
+    border-right:0;  
+    border-radius:7px 0 0 7px;  
+    outline:none;  
+    font-size:14px;  
+}  
+  
+.search-box button{  
+    width:50px;  
+    border:none;  
+    background:#0755b8;  
+    color:white;  
+    border-radius:0 7px 7px 0;  
+    cursor:pointer;  
+}  
+  
+.header-menu{  
+    margin-left:auto;  
+    display:flex;  
+    gap:18px;  
+    align-items:center;  
+}  
+  
+.header-menu a{  
+    color:#333;  
+    text-decoration:none;  
+    text-align:center;  
+    font-size:11px;  
+    cursor:pointer;  
+}  
+  
+.header-menu span{  
+    display:block;  
+    font-size:20px;  
+    margin-bottom:3px;  
+}  
+  
+.logout-btn{  
+    border:0;  
+    background:#e53935;  
+    color:white;  
+    padding:8px 12px;  
+    border-radius:5px;  
+    cursor:pointer;  
+    font-size:11px;  
+}  
+  
+.logout-btn:hover{  
+    background:#c62828;  
+}  
+  
+/* ================= NAVBAR ================= */  
+  
+.navbar{  
+    background:#0755b8;  
+    min-height:48px;  
+    padding:0 6%;  
+    display:flex;  
+    align-items:center;  
+    justify-space-between:space-between;  
+}  
+  
+.nav-links{  
+    display:flex;  
+    gap:27px;  
+}  
+  
+.nav-links a{  
+    color:white;  
+    text-decoration:none;  
+    font-size:12px;  
+    font-weight:bold;  
+}  
+  
+.nav-links a:hover{  
+    opacity:.75;  
+}  
+  
+.promo{  
+    background:#ffd600;  
+    color:#222;  
+    padding:7px 14px;  
+    border-radius:5px;  
+    font-size:12px;  
+    font-weight:bold;  
+}  
+  
+/* ================= HERO ================= */  
+  
+.hero{  
+    min-height:430px;  
+    padding:60px 8%;  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+    gap:50px;  
+    background:linear-gradient(110deg,#eaf3ff,#fff);  
+}  
+  
+.hero-content{  
+    max-width:560px;  
+}  
+  
+.hero-label{  
+    color:#0755b8;  
+    font-size:13px;  
+    font-weight:bold;  
+}  
+  
+.hero h1{  
+    color:#073b87;  
+    font-size:46px;  
+    line-height:1.12;  
+    margin:15px 0;  
+}  
+  
+.hero p{  
+    color:#667085;  
+    line-height:1.7;  
+    margin-bottom:25px;  
+}  
+  
+.btn{  
+    border:0;  
+    background:#0755b8;  
+    color:#fff;  
+    padding:13px 22px;  
+    border-radius:6px;  
+    cursor:pointer;  
+    font-weight:bold;  
+    transition:.2s;  
+}  
+  
+.btn:hover{  
+    background:#06458f;  
+    transform:translateY(-1px);  
+}  
+  
+.hero-image{  
+    width:47%;  
+    height:330px;  
+    border-radius:15px;  
+    overflow:hidden;  
+    background:#e5e5e5;  
+}  
+  
+.hero-image img{  
+    width:100%;  
+    height:100%;  
+    object-fit:cover;  
+}  
+  
+/* ================= FEATURES ================= */  
+  
+.features{  
+    width:88%;  
+    margin:-35px auto 45px;  
+    position:relative;  
+    background:#fff;  
+    border-radius:10px;  
+    box-shadow:0 5px 20px rgba(0,0,0,.08);  
+    display:grid;  
+    grid-template-columns:repeat(4,1fr);  
+}  
+  
+.feature{  
+    padding:22px;  
+    display:flex;  
+    gap:13px;  
+    border-right:1px solid #eee;  
+}  
+  
+.feature:last-child{  
+    border-right:none;  
+}  
+  
+.feature-icon{  
+    font-size:28px;  
+}  
+  
+.feature h4{  
+    color:#123f88;  
+    margin-bottom:5px;  
+}  
+  
+.feature p{  
+    color:#777;  
+    font-size:12px;  
+}  
+  
+/* ================= CONTAINER ================= */  
+  
+.container{  
+    width:88%;  
+    max-width:1250px;  
+    margin:auto;  
+}  
+  
+.section-title{  
+    display:flex;  
+    justify-content:space-between;  
+    align-items:center;  
+    margin:40px 0 20px;  
+}  
+  
+.section-title h2{  
+    color:#123f88;  
+    font-size:24px;  
+}  
+  
+/* ================= CATEGORY ================= */  
+  
+.categories{  
+    display:grid;  
+    grid-template-columns:repeat(4,1fr);  
+    gap:18px;  
+}  
+  
+.category{  
+    background:#fff;  
+    padding:12px;  
+    border-radius:10px;  
+    text-align:center;  
+    box-shadow:0 2px 10px rgba(0,0,0,.05);  
+    transition:.2s;  
+    cursor:pointer;  
+}  
+  
+.category:hover{  
+    transform:translateY(-4px);  
+}  
+  
+.category-image{  
+    width:100%;  
+    height:130px;  
+    overflow:hidden;  
+    border-radius:7px;  
+    background:#eee;  
+}  
+  
+.category-image img{  
+    width:100%;  
+    height:100%;  
+    object-fit:cover;  
+}  
+  
+.category h3{  
+    margin-top:12px;  
+    font-size:14px;  
+}  
+  
+.category p{  
+    margin-top:5px;  
+    color:#777;  
+    font-size:12px;  
+}  
+  
+/* ================= PRODUCTS ================= */  
+  
+.products{  
+    display:grid;  
+    grid-template-columns:repeat(3,1fr);  
+    gap:20px;  
+}  
+  
+.product{  
+    background:#fff;  
+    border-radius:10px;  
+    overflow:hidden;  
+    box-shadow:0 3px 15px rgba(0,0,0,.07);  
+    transition:.2s;  
+}  
+  
+.product:hover{  
+    transform:translateY(-5px);  
+}  
+  
+.product-image{  
+    height:250px;  
+    background:#eee;  
+    position:relative;  
+    overflow:hidden;  
+}  
+  
+.product-image img{  
+    width:100%;  
+    height:100%;  
+    object-fit:cover;  
+    transition:.3s;  
+}  
+  
+.product:hover .product-image img{  
+    transform:scale(1.04);  
+}  
+  
+.product-badge{  
+    position:absolute;  
+    top:12px;  
+    left:12px;  
+    background:#e53935;  
+    color:white;  
+    padding:5px 9px;  
+    border-radius:4px;  
+    font-size:10px;  
+    font-weight:bold;  
+    z-index:2;  
+}  
+  
+.product-content{  
+    padding:16px;  
+}  
+  
+.product-category{  
+    color:#888;  
+    font-size:11px;  
+}  
+  
+.product h3{  
+    font-size:16px;  
+    margin:8px 0;  
+}  
+  
+.rating{  
+    color:#ffb400;  
+    font-size:13px;  
+}  
+  
+.price{  
+    color:#0755b8;  
+    font-size:19px;  
+    font-weight:bold;  
+    margin:10px 0 5px;  
+}  
+  
+.stock{  
+    color:#777;  
+    font-size:11px;  
+    margin-bottom:13px;  
+}  
+  
+.product-buttons{  
+    display:flex;  
+    gap:8px;  
+}  
+  
+.product-buttons .btn{  
+    flex:1;  
+}  
+  
+.detail-btn{  
+    background:#eef4ff;  
+    color:#0755b8;  
+    border:1px solid #0755b8;  
+    padding:10px;  
+    border-radius:6px;  
+    cursor:pointer;  
+    font-weight:bold;  
+}  
+  
+.detail-btn:hover{  
+    background:#0755b8;  
+    color:white;  
+}  
+  
+/* ================= CART ================= */  
+  
+.cart{  
+    background:#fff;  
+    padding:25px;  
+    border-radius:10px;  
+    margin:50px 0;  
+    box-shadow:0 3px 15px rgba(0,0,0,.05);  
+}  
+  
+.cart h2{  
+    color:#123f88;  
+    margin-bottom:15px;  
+}  
+  
+.cart-empty{  
+    color:#777;  
+    padding:20px 0;  
+}  
+  
+.cart-item{  
+    display:flex;  
+    align-items:center;  
+    gap:15px;  
+    padding:15px 0;  
+    border-bottom:1px solid #eee;  
+}  
+  
+.cart-item img{  
+    width:75px;  
+    height:75px;  
+    object-fit:cover;  
+    border-radius:7px;  
+}  
+  
+.cart-info{  
+    flex:1;  
+}  
+  
+.cart-info h4{  
+    margin-bottom:6px;  
+}  
+  
+.cart-price{  
+    color:#0755b8;  
+    font-size:13px;  
+    font-weight:bold;  
+}  
+  
+.cart-size{  
+    color:#666;  
+    font-size:12px;  
+    margin-top:4px;  
+}  
+  
+.quantity{  
+    display:flex;  
+    align-items:center;  
+    gap:8px;  
+}  
+  
+.quantity button{  
+    width:30px;  
+    height:30px;  
+    border:1px solid #ddd;  
+    background:#fff;  
+    cursor:pointer;  
+    border-radius:4px;  
+}  
+  
+.remove{  
+    border:0;  
+    background:none;  
+    color:#e53935;  
+    cursor:pointer;  
+}  
+  
+.cart-total{  
+    text-align:right;  
+    padding-top:20px;  
+}  
+  
+.cart-total h2{  
+    color:#0755b8;  
+    margin-bottom:15px;  
+}  
+  
+/* ================= CHECKOUT ================= */  
+  
+.checkout{  
+    background:#fff;  
+    padding:30px;  
+    border-radius:10px;  
+    margin:50px 0;  
+    box-shadow:0 3px 15px rgba(0,0,0,.05);  
+}  
+  
+.checkout h2{  
+    color:#123f88;  
+    margin-bottom:25px;  
+}  
+  
+.checkout-grid{  
+    display:grid;  
+    grid-template-columns:1.2fr 1fr;  
+    gap:40px;  
+}  
+  
+.form-group{  
+    margin-bottom:16px;  
+}  
+  
+.form-group label{  
+    display:block;  
+    font-weight:bold;  
+    font-size:13px;  
+    margin-bottom:7px;  
+}  
+  
+.form-group input,  
+.form-group textarea,  
+.form-group select{  
+    width:100%;  
+    padding:12px;  
+    border:1px solid #ddd;  
+    border-radius:6px;  
+    outline:none;  
+}  
+  
+.form-group input:focus,  
+.form-group textarea:focus,  
+.form-group select:focus{  
+    border-color:#0755b8;  
+}  
+  
+.payment-box{  
+    border:1px solid #eee;  
+    padding:18px;  
+    border-radius:8px;  
+}  
+  
+.payment-option{  
+    display:block;  
+    padding:12px;  
+    border-bottom:1px solid #eee;  
+    cursor:pointer;  
+}  
+  
+.payment-option:last-child{  
+    border-bottom:0;  
+}  
+  
+/* ================= PROFIL SISWA ================= */  
+  
+.profile-section{  
+    background:#fff;  
+    padding:30px;  
+    border-radius:12px;  
+    margin:50px 0;  
+    box-shadow:0 3px 15px rgba(0,0,0,.05);  
+}  
+  
+.profile-header{  
+    display:flex;  
+    align-items:center;  
+    gap:20px;  
+    padding-bottom:25px;  
+    border-bottom:1px solid #eee;  
+    margin-bottom:25px;  
+}  
+  
+.profile-avatar-container{  
+    position:relative;  
+}  
+  
+.profile-avatar{  
+    width:100px;  
+    height:100px;  
+    border-radius:50%;  
+    object-fit:cover;  
+    border:3px solid #0755b8;  
+}  
+  
+.change-photo-btn{  
+    position:absolute;  
+    bottom:0;  
+    right:0;  
+    background:#0755b8;  
+    color:white;  
+    border:none;  
+    border-radius:50%;  
+    width:32px;  
+    height:32px;  
+    cursor:pointer;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    font-size:14px;  
+}  
+  
+.profile-info-text h3{  
+    color:#073b87;  
+    font-size:22px;  
+    margin-bottom:5px;  
+}  
+  
+.profile-info-text p{  
+    color:#777;  
+    font-size:13px;  
+}  
+  
+.profile-badge{  
+    display:inline-block;  
+    margin-top:8px;  
+    background:#eef4ff;  
+    color:#0755b8;  
+    padding:4px 10px;  
+    border-radius:20px;  
+    font-size:11px;  
+    font-weight:bold;  
+}  
+  
+.profile-grid{  
+    display:grid;  
+    grid-template-columns:1fr 1fr;  
+    gap:20px;  
+}  
+  
+/* ================= SUCCESS ================= */  
+  
+.success-overlay{  
+    position:fixed;  
+    inset:0;  
+    background:rgba(0,0,0,.55);  
+    display:none;  
+    align-items:center;  
+    justify-content:center;  
+    z-index:9999;  
+}  
+  
+.success-overlay.show{  
+    display:flex;  
+}  
+  
+.success-box{  
+    width:90%;  
+    max-width:400px;  
+    background:white;  
+    border-radius:18px;  
+    padding:35px 25px;  
+    text-align:center;  
+    animation:pop .35s ease;  
+}  
+  
+@keyframes pop{  
+    0%{  
+        opacity:0;  
+        transform:scale(.6);  
+    }  
+  
+    100%{  
+        opacity:1;  
+        transform:scale(1);  
+    }  
+}  
+  
+.check-circle{  
+    width:90px;  
+    height:90px;  
+    margin:0 auto 20px;  
+    border-radius:50%;  
+    background:#20b15a;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    color:white;  
+    font-size:55px;  
+    animation:check .6s ease;  
+}  
+  
+@keyframes check{  
+    0%{  
+        transform:scale(0);  
+    }  
+  
+    70%{  
+        transform:scale(1.15);  
+    }  
+  
+    100%{  
+        transform:scale(1);  
+    }  
+}  
+  
+.success-box h2{  
+    color:#20a653;  
+    margin-bottom:10px;  
+}  
+  
+.success-box p{  
+    color:#666;  
+    line-height:1.6;  
+    margin-bottom:20px;  
+}  
+  
+.success-order{  
+    background:#f2f8f4;  
+    padding:12px;  
+    border-radius:8px;  
+    margin-bottom:20px;  
+    color:#16763d;  
+    font-weight:bold;  
+}  
+  
+/* ================= FOOTER ================= */  
+  
+footer{  
+    background:#092d5c;  
+    color:white;  
+    padding:45px 7%;  
+    margin-top:60px;  
+}  
+  
+.footer-grid{  
+    display:grid;  
+    grid-template-columns:2fr 1fr 1fr 1.5fr;  
+    gap:40px;  
+}  
+  
+footer h3{  
+    margin-bottom:15px;  
+}  
+  
+footer p,  
+footer a{  
+    display:block;  
+    color:#ccd6e6;  
+    font-size:13px;  
+    line-height:1.9;  
+    text-decoration:none;  
+}  
+  
+.copyright{  
+    border-top:1px solid rgba(255,255,255,.15);  
+    margin-top:30px;  
+    padding-top:20px;  
+    text-align:center;  
+    color:#bbc6d8;  
+    font-size:12px;  
+}  
+  
+/* ================= RESPONSIVE ================= */  
+  
+@media(max-width:1000px){  
+  
+    .header-top{  
+        flex-wrap:wrap;  
+    }  
+  
+    .search-box{  
+        order:3;  
+        flex-basis:100%;  
+        max-width:none;  
+    }  
+  
+    .header-menu{  
+        display:none;  
+    }  
+  
+    .features{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .categories{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .products{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .hero h1{  
+        font-size:38px;  
+    }  
+  
+}  
+  
+@media(max-width:700px){  
+  
+    .navbar{  
+        overflow-x:auto;  
+        white-space:nowrap;  
+    }  
+  
+    .nav-links{  
+        gap:20px;  
+    }  
+  
+    .promo{  
+        display:none;  
+    }  
+  
+    .hero{  
+        display:block;  
+    }  
+  
+    .hero-image{  
+        width:100%;  
+        margin-top:30px;  
+    }  
+  
+    .features{  
+        width:92%;  
+        grid-template-columns:1fr;  
+        margin-top:20px;  
+    }  
+  
+    .feature{  
+        border-right:0;  
+        border-bottom:1px solid #eee;  
+    }  
+  
+    .container{  
+        width:92%;  
+    }  
+  
+    .categories{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .products{  
+        grid-template-columns:repeat(2,1fr);  
+        gap:12px;  
+    }  
+  
+    .product-image{  
+        height:190px;  
+    }  
+  
+    .checkout-grid,  
+    .profile-grid{  
+        grid-template-columns:1fr;  
+    }  
+  
+    .footer-grid{  
+        grid-template-columns:1fr 1fr;  
+    }  
+  
+    .cart-item{  
+        flex-wrap:wrap;  
+    }  
+  
+}  
+  
+@media(max-width:450px){  
+  
+    .products{  
+        grid-template-columns:1fr;  
+    }  
+  
+    .product-image{  
+        height:250px;  
+    }  
+  
+    .categories{  
+        gap:10px;  
+    }  
+  
+    .hero h1{  
+        font-size:32px;  
+    }  
+  
+    .footer-grid{  
+        grid-template-columns:1fr;  
+    }  
+  
+}  
+  
+</style>  </head>  <body>  <!-- ================= LOGIN ================= -->  <div class="login-page" id="loginPage">  <div class="login-box">  
+
+    <div class="login-logo">  
+        🏫  
+    </div>  
+
+    <h2>  
+        KOPERASI SEKOLAH  
+    </h2>  
+
+    <p>  
+        Silakan login untuk masuk ke koperasi  
+    </p>  
+
+    <div  
+        class="login-error"  
+        id="loginError"  
+    >  
+        Username atau password salah!  
+    </div>  
+
+    <div class="login-group">  
+
+        <label>  
+            Username  
+        </label>  
+
+        <input  
+            type="text"  
+            id="loginUsername"  
+            placeholder="Masukkan username"  
+        >  
+
+    </div>  
+
+    <div class="login-group">  
+
+        <label>  
+            Password  
+        </label>  
+
+        <input  
+            type="password"  
+            id="loginPassword"  
+            placeholder="Masukkan password"  
+        >  
+
+    </div>  
+
+    <button  
+        class="login-btn"  
+        onclick="login()"  
+    >  
+        🔐 Login  
+    </button>  
+
+    <div class="login-info">  
+        Demo Login: admin / 12345  
+    </div>  
+
+</div>
+
+</div>  <!-- ================= HEADER ================= -->  <header>  <div class="header-top">  
+
+    <div class="logo">  
+
+        <img  
+            src="MHC.jpg"  
+            width="45"  
+            height="45"  
+            alt="Logo Koperasi Sekolah"  
+            style="object-fit:contain; border-radius:8px;"  
+        >  
+
+        <div class="logo-text">  
+
+            <h2>KOPERASI SEKOLAH</h2>  
+
+            <small>  
+                Pusat Perlengkapan Sekolah  
+            </small>  
+
+        </div>  
+
+    </div>  
+
+    <div class="search-box">  
+
+        <input  
+            type="text"  
+            id="searchInput"  
+            placeholder="Cari seragam, pramuka, olahraga..."  
+            onkeyup="searchProduct()"  
+        >  
+
+        <button onclick="searchProduct()">  
+            🔍  
+        </button>  
+
+    </div>  
+
+    <div class="header-menu">  
+
+        <a href="#produk">  
+            <span>🏠</span>  
+            Produk  
+        </a>  
+
+        <a href="#keranjang">  
+            <span>🛒</span>  
+            Keranjang  
+        </a>  
+
+        <a href="#checkout">  
+            <span>💳</span>  
+            Bayar  
+        </a>  
+
+        <a href="#profil">  
+            <span>👤</span>  
+            Profil  
+        </a>  
+
+        <button  
+            class="logout-btn"  
+            onclick="logout()"  
+        >  
+            Logout  
+        </button>  
+
+    </div>  
+
+</div>  
+
+<!-- NAVBAR -->  
+
+<div class="navbar">  
+
+    <div class="nav-links">  
+
+        <a href="#produk">SERAGAM</a>  
+
+        <a href="#produk">PRAMUKA</a>  
+
+        <a href="#produk">OLAHRAGA</a>  
+
+        <a href="#produk">BATIK</a>  
+
+        <a href="#produk">ATK</a>  
+
+    </div>  
+
+    <div class="promo">  
+        🔥 PROMO  
+    </div>  
+
+</div>
+
+</header>  <!-- ================= HERO ================= -->  <section class="hero">  <div class="hero-content">  <div class="hero-label">  
+KOPERASI SEKOLAH  
+</div>  <h1>  
+Semua Kebutuhan  
+Sekolah Ada di Sini  
+</h1>  <p>  Temukan berbagai macam seragam sekolah,
+perlengkapan pramuka, pakaian olahraga,
+batik dan alat tulis dengan harga
+terjangkau.
+
+</p>  <a href="#produk" class="btn">  
+Belanja Sekarang  
+</a>  </div>  <div class="hero-image">  <img
+src="allin.jpg"
+alt="Produk koperasi sekolah"
+
+> 
+
+</div>  </section>  <!-- ================= FEATURES ================= -->  <div class="features">  <div class="feature">  <div class="feature-icon">  
+🏆  
+</div>  <div>  <h4>  
+Produk Berkualitas  
+</h4>  <p>  
+Produk terjamin untuk kebutuhan siswa.  
+</p>  </div>  </div>  <div class="feature">  <div class="feature-icon">  
+💰  
+</div>  <div>  <h4>  
+Harga Terjangkau  
+</h4>  <p>  
+Harga khusus untuk siswa.  
+</p>  </div>  </div>  <div class="feature">  <div class="feature-icon">  
+📏  
+</div>  <div>  <h4>  
+Ukuran Lengkap  
+</h4>  <p>  
+Tersedia S hingga XXL.  
+</p>  </div>  </div>  <div class="feature">  <div class="feature-icon">  
+⚡  
+</div>  <div>  <h4>  
+Pelayanan Cepat  
+</h4>  <p>  
+Pesanan diproses dengan cepat.  
+</p>  </div>  </div>  </div>  <div class="container">  <!-- ================= KATEGORI ================= -->  <div class="section-title">  <h2>  
+Kategori Produk  
+</h2>  </div>  <div class="categories">  <div  
+class="category"  
+onclick="filterCategory('SERAGAM')"  
+>  <div class="category-image">  <img
+src="allin.jpg"
+alt="Seragam sekolah"
+
+> 
+
+</div>  <h3>  
+Seragam Sekolah  
+</h3>  <p>  
+3 Produk  
+</p>  </div>  <div  
+class="category"  
+onclick="filterCategory('PRAMUKA')"  
+>  <div class="category-image">  <img
+src="pramuka.jpg"
+alt="Pramuka"
+
+> 
+
+</div>  <h3>  
+Pramuka  
+</h3>  <p>  
+1 Produk  
+</p>  </div>  <div  
+class="category"  
+onclick="filterCategory('OLAHRAGA')"  
+>  <div class="category-image">  <img
+src="olahraga.jpg"
+alt="Olahraga"
+
+> 
+
+</div>  <h3>  
+Olahraga  
+</h3>  <p>  
+1 Produk  
+</p>  </div>  <div  
+class="category"  
+onclick="filterCategory('BATIK')"  
+>  <div class="category-image">  <img
+src="putih.jpg"
+alt="Batik"
+
+> 
+
+</div>  <h3>  
+Seragam Putih  
+</h3>  <p>  
+1 Produk  
+</p>  </div>  </div>  <!-- ================= PRODUK ================= -->  <div  
+class="section-title"  
+id="produk"  
+>  <h2>  
+Produk Terlaris  
+</h2>  </div>  <div  
+class="products"  
+id="productList"  
+>  <!-- PRODUK 1 -->  <div  
+class="product"  
+data-name="Kemeja Putih Sekolah"  
+data-category="SERAGAM"  
+>  <div class="product-image">  <div class="product-badge">  
+TERLARIS  
+</div>  <img
+src="putih.jpg"
+alt="Kemeja Putih Sekolah"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+SERAGAM  
+</div>  <h3>  
+Kemeja Putih Sekolah  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp75.000  
+</div>  <div class="stock">  
+Stok tersedia: 35 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Kemeja Putih Sekolah',
+75000,
+'putih.jpg',
+'SERAGAM',
+'Katun',
+'Putih',
+35
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Kemeja Putih Sekolah',
+75000,
+'putih.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  <!-- PRODUK 2 -->  <div  
+class="product"  
+data-name="Celana Abu Abu"  
+data-category="SERAGAM"  
+>  <div class="product-image">  <img
+src="celana.jpg"
+alt="Celana Abu Abu"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+SERAGAM  
+</div>  <h3>  
+Celana Abu-abu  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp85.000  
+</div>  <div class="stock">  
+Stok tersedia: 25 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Celana Abu-abu',
+85000,
+'celana.jpg',
+'SERAGAM',
+'Katun',
+'Abu-abu',
+25
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Celana Abu-abu',
+85000,
+'celana.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  <!-- PRODUK 3 -->  <div  
+class="product"  
+data-name="Rok Abu Abu"  
+data-category="SERAGAM"  
+>  <div class="product-image">  <img
+src="rok.jpg"
+alt="Rok Abu Abu"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+SERAGAM  
+</div>  <h3>  
+Rok Abu-abu  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp85.000  
+</div>  <div class="stock">  
+Stok tersedia: 20 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Rok Abu-abu',
+85000,
+'rok.jpg',
+'SERAGAM',
+'Katun',
+'Abu-abu',
+20
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Rok Abu-abu',
+85000,
+'rok.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  <!-- PRODUK 4 -->  <div  
+class="product"  
+data-name="Seragam Pramuka"  
+data-category="PRAMUKA"  
+>  <div class="product-image">  <div class="product-badge">  
+POPULER  
+</div>  <img
+src="pramuka.jpg"
+alt="Seragam Pramuka"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+PRAMUKA  
+</div>  <h3>  
+Seragam Pramuka  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp120.000  
+</div>  <div class="stock">  
+Stok tersedia: 18 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Seragam Pramuka',
+120000,
+'pramukaa.jpg',
+'PRAMUKA',
+'Katun',
+'Coklat',
+18
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Seragam Pramuka',
+120000,
+'pramukaa.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  <!-- PRODUK 5 -->  <div  
+class="product"  
+data-name="Seragam Olahraga"  
+data-category="OLAHRAGA"  
+>  <div class="product-image">  <img
+src="olahraga.jpg"
+alt="Seragam Olahraga"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+OLAHRAGA  
+</div>  <h3>  
+Seragam Olahraga  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp80.000  
+</div>  <div class="stock">  
+Stok tersedia: 25 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Seragam Olahraga',
+80000,
+'olah.jpg',
+'OLAHRAGA',
+'Polyester',
+'Biru',
+25
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Seragam Olahraga',
+80000,
+'olah.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  <!-- PRODUK 6 -->  <div  
+class="product"  
+data-name="Batik Sekolah"  
+data-category="BATIK"  
+>  <div class="product-image">  <img
+src="batik.jpg"
+alt="Batik Sekolah"
+
+> 
+
+</div>  <div class="product-content">  <div class="product-category">  
+BATIK  
+</div>  <h3>  
+Batik Sekolah  
+</h3>  <div class="rating">  
+★★★★★  
+</div>  <div class="price">  
+Rp95.000  
+</div>  <div class="stock">  
+Stok tersedia: 22 pcs  
+</div>  <div class="product-buttons">  <button
+class="detail-btn"
+onclick="openDetail(
+'Batik Sekolah',
+95000,
+'batik.jpg',
+'BATIK',
+'Katun',
+'Batik',
+22
+)"
+
+> 
+
+Detail
+
+</button>  <button
+class="btn"
+onclick="addToCart(
+'Batik Sekolah',
+95000,
+'batik.jpg'
+)"
+
+> 
+
+- Keranjang
+
+</button>  </div>  </div>  </div>  </div>  <!-- ================= KERANJANG ================= -->  <div  
+class="cart"  
+id="keranjang"  
+>  <h2>  
+🛒 Keranjang Belanja  
+</h2>  <div id="cartContent">  <div class="cart-empty">  
+Keranjang masih kosong.  
+</div>  </div>  </div>  <!-- ================= CHECKOUT ================= -->  <div  
+class="checkout"  
+id="checkout"  
+>  <h2>  
+Checkout Pesanan  
+</h2>  <div class="checkout-grid">  <div>  <div class="form-group">  <label>  
+Nama Lengkap  
+</label>  <input
+type="text"
+id="nama"
+placeholder="Masukkan nama siswa"
+
+> 
+
+</div>  <div class="form-group">  <label>  
+Kelas  
+</label>  <input
+type="text"
+id="kelas"
+placeholder="Contoh: XI RPL 1"
+
+> 
+
+</div>  <div class="form-group">  <label>  
+Nomor WhatsApp  
+</label>  <input
+type="text"
+id="whatsapp"
+placeholder="08xxxxxxxxxx"
+
+> 
+
+</div>  <div class="form-group">  <label>  
+Alamat  
+</label>  <textarea  
+id="alamat"  
+rows="4"  
+placeholder="Masukkan alamat"  
+></textarea>  </div>  </div>  <div>  <div class="form-group">  <label>  
+Ukuran / Size  
+</label>  <select id="size">  <option value="">  
+Pilih ukuran  
+</option>  <option value="S">  
+S  
+</option>  <option value="M">  
+M  
+</option>  <option value="L">  
+L  
+</option>  <option value="XL">  
+XL  
+</option>  <option value="XXL">  
+XXL  
+</option>  </select>  </div>  <h3 style="margin-bottom:15px;">  
+Metode Pembayaran  
+</h3>  <div class="payment-box">  <label class="payment-option">  <input
+type="radio"
+name="payment"
+value="Bayar di Koperasi"
+checked
+
+> 
+
+Bayar di Koperasi
+
+</label>  <label class="payment-option">  <input
+type="radio"
+name="payment"
+value="Transfer Bank"
+
+> 
+
+Transfer Bank
+
+</label>  <label class="payment-option">  <input
+type="radio"
+name="payment"
+value="E-Wallet"
+
+> 
+
+E-Wallet
+
+</label>  </div>  <br>  <button
+class="btn"
+style="width:100%;"
+onclick="createOrder()"
+
+> 
+
+Buat Pesanan & Kirim WhatsApp
+
+</button>  </div>  </div>  </div>  <!-- ================= HALAMAN PROFIL ================= -->  <div class="profile-section" id="profil">  <div class="profile-header">  
+    <div class="profile-avatar-container">  
+        <img src="https://via.placeholder.com/100" alt="Foto Profil" id="avatarImg" class="profile-avatar">  
+        <button class="change-photo-btn" onclick="document.getElementById('photoInput').click()" title="Ubah Foto">📷</button>  
+        <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="previewPhoto(event)">  
+    </div>  
+    <div class="profile-info-text">  
+        <h3 id="displayNama">Ahmad Fauzi</h3>  
+        <p id="displayEmail">ahmad.fauzi@sekolah.id</p>  
+
+        <div class="profile-badge">  
+            Siswa Aktif  
+        </div>  
+    </div>  
+</div>  
+
+<h3 style="color:#123f88; margin-bottom:20px;">Data Pengguna</h3>  
+
+<div class="profile-grid">  
+
+    <div class="form-group">  
+        <label>Nama Lengkap</label>  
+        <input type="text" id="profNama" value="Ahmad Fauzi">  
+    </div>  
+
+    <div class="form-group">  
+        <label>Kelas</label>  
+        <input type="text" id="profKelas" value="XI RPL 1">  
+    </div>  
+
+    <div class="form-group">  
+        <label>Email</label>  
+        <input type="email" id="profEmail" value="ahmad.fauzi@sekolah.id">  
+    </div>  
+
+    <div class="form-group">  
+        <label>Nomor HP / WhatsApp</label>  
+        <input type="text" id="profPhone" value="081234567890">  
+    </div>  
+
+    <div class="form-group" style="grid-column: 1 / -1;">  
+        <label>Alamat Lengkap</label>  
+        <textarea id="profAlamat" rows="3">Jl. Pendidikan No. 45, Garut</textarea>  
+    </div>  
+
+</div>  
+
+<br>  
+
+<button class="btn" onclick="saveProfile()">  
+    💾 Simpan Perubahan Profil  
+</button>
+
+</div>  </div>  <!-- ================= SUCCESS POPUP ================= -->  <div  
+class="success-overlay"  
+id="successOverlay"  
+>  <div class="success-box">  <div class="check-circle">  
+✓  
+</div>  <h2>  
+Checkout Berhasil!  
+</h2>  <p>  
+Pesanan kamu berhasil dibuat.  
+Pesanan akan diteruskan ke WhatsApp koperasi.  
+</p>  <div  
+class="success-order"  
+id="successOrder"  
+>  KOP-000000
+
+</div>  <button
+class="btn"
+onclick="closeSuccess()"
+
+> 
+
+Selesai
+
+</button>  </div>  </div>  <!-- ================= FOOTER ================= -->  <footer>  <div class="footer-grid">  <div>  <h3>  
+🏫 KOPERASI SEKOLAH  
+</h3>  <p>  Pusat penjualan seragam dan perlengkapan
+sekolah untuk siswa dan warga sekolah.
+
+</p>  </div>  <div>  <h3>  
+Informasi  
+</h3>  <a href="#produk">  
+Produk  
+</a>  <a href="#keranjang">  
+Keranjang  
+</a>  <a href="#checkout">  
+Checkout  
+</a>  <a href="#profil">  
+Profil  
+</a>  </div>  <div>  <h3>  
+Kategori  
+</h3>  <a href="#produk">  
+Seragam  
+</a>  <a href="#produk">  
+Pramuka  
+</a>  <a href="#produk">  
+Olahraga  
+</a>  <a href="#produk">  
+Batik  
+</a>  </div>  <div>  <h3>  
+Hubungi Kami  
+</h3>  <p>  
+📍 Jl. Pendidikan No. 123  
+</p>  <p>  
+📞 0882-2042-3371  
+</p>  <p>  
+✉️ koperasi@sekolah.id  
+</p>  <p>  
+🕐 Senin - Sabtu  
+</p>  </div>  </div>  <div class="copyright">  © 2026 Koperasi Sekolah. All Rights Reserved.
+
+</div>  </footer>  <script>  
+  
+/* ==========================  
+   LOGIN  
+========================== */  
+  
+function login(){  
+  
+    let username =  
+        document  
+        .getElementById("loginUsername")  
+        .value  
+        .trim();  
+  
+    let password =  
+        document  
+        .getElementById("loginPassword")  
+        .value  
+        .trim();  
+  
+    let error =  
+        document.getElementById("loginError");  
+  
+  
+    if(  
+        username === "admin" &&  
+        password === "12345"  
+    ){  
+  
+        localStorage.setItem(  
+            "koperasiLogin",  
+            "true"  
+        );  
+  
+        document  
+        .getElementById("loginPage")  
+        .style.display = "none";  
+  
+        error.style.display = "none";  
+  
+    }else{  
+  
+        error.style.display = "block";  
+  
+    }  
+  
+}  
+  
+  
+/* ==========================  
+   CEK LOGIN  
+========================== */  
+  
+function checkLogin(){  
+  
+    let loginStatus =  
+        localStorage.getItem(  
+            "koperasiLogin"  
+        );  
+  
+    if(  
+        loginStatus === "true"  
+    ){  
+  
+        document  
+        .getElementById("loginPage")  
+        .style.display = "none";  
+  
+    }else{  
+  
+        document  
+        .getElementById("loginPage")  
+        .style.display = "flex";  
+  
+    }  
+  
+}  
+  
+  
+/* ==========================  
+   LOGOUT  
+========================== */  
+  
+function logout(){  
+  
+    if(  
+        confirm(  
+            "Apakah kamu yakin ingin logout?"  
+        )  
+    ){  
+  
+        localStorage.removeItem(  
+            "koperasiLogin"  
+        );  
+  
+        location.reload();  
+  
+    }  
+  
+}  
+  
+  
+/* ==========================  
+   ENTER UNTUK LOGIN  
+========================== */  
+  
+document.addEventListener(  
+    "keydown",  
+    function(event){  
+  
+        if(  
+            event.key === "Enter"  
+        ){  
+  
+            let loginPage =  
+                document.getElementById(  
+                    "loginPage"  
+                );  
+  
+            if(  
+                loginPage.style.display !== "none"  
+            ){  
+  
+                login();  
+  
+            }  
+  
+        }  
+  
+    }  
+);  
+  
+  
+/* CEK LOGIN */  
+  
+window.addEventListener(  
+    "load",  
+    function(){  
+  
+        checkLogin();  
+        loadProfile();  
+  
+    }  
+);  
+  
+  
+/* ==========================
+   PROFIL MANAGEMENT
+========================== */
+
+function loadProfile(){
+
+    let savedProfile = localStorage.getItem("userProfile");
+
+    if(savedProfile){
+
+        try {
+
+            let profile = JSON.parse(savedProfile);
+
+            document.getElementById("profNama").value =
+                profile.nama || "Muhamad Raffi";
+
+            document.getElementById("profKelas").value =
+                profile.kelas || "XI RPL 3";
+
+            document.getElementById("profEmail").value =
+                profile.email || "ahmad.fauzi@sekolah.id";
+
+            document.getElementById("profPhone").value =
+                profile.phone || "081234567890";
+
+            document.getElementById("profAlamat").value =
+                profile.alamat || "Jl. Pendidikan No. 45, Garut";
+
+            // Menampilkan foto profil yang sudah disimpan
+            if(profile.photo){
+                document.getElementById("avatarImg").src =
+                    profile.photo;
+            }
+
+            // Mengisi data checkout secara otomatis
+            document.getElementById("nama").value =
+                profile.nama || "";
+
+            document.getElementById("kelas").value =
+                profile.kelas || "";
+
+            document.getElementById("whatsapp").value =
+                profile.phone || "";
+
+            document.getElementById("alamat").value =
+                profile.alamat || "";
+
+        } catch(error) {
+
+            console.error("Data profil tidak dapat dibaca:", error);
+
+        }
+
+    }
+
+    updateProfileDisplay();
+
+}
+
+
+/* ==========================
+   SIMPAN PROFIL
+========================== */
+
+function saveProfile(){
+
+    let nama = document.getElementById("profNama").value.trim();
+    let kelas = document.getElementById("profKelas").value.trim();
+    let email = document.getElementById("profEmail").value.trim();
+    let phone = document.getElementById("profPhone").value.trim();
+    let alamat = document.getElementById("profAlamat").value.trim();
+    let photo = document.getElementById("avatarImg").src;
+
+    if(!nama || !kelas || !email || !phone || !alamat){
+
+        alert("Semua data profil harus diisi.");
+        return;
+
+    }
+
+    let profileData = {
+        nama: nama,
+        kelas: kelas,
+        email: email,
+        phone: phone,
+        alamat: alamat,
+        photo: photo
+    };
+
+    try {
+
+        localStorage.setItem(
+            "userProfile",
+            JSON.stringify(profileData)
+        );
+
+        // Sinkronisasi dengan formulir checkout
+        document.getElementById("nama").value = nama;
+        document.getElementById("kelas").value = kelas;
+        document.getElementById("whatsapp").value = phone;
+        document.getElementById("alamat").value = alamat;
+
+        updateProfileDisplay();
+
+        alert("Profil berhasil diperbarui!");
+
+    } catch(error) {
+
+        alert("Data profil gagal disimpan. Coba gunakan foto yang lebih kecil.");
+
+    }
+
+}
+
+
+/* ==========================
+   UPDATE TAMPILAN PROFIL
+========================== */
+
+function updateProfileDisplay(){
+
+    let nama = document.getElementById("profNama").value;
+    let email = document.getElementById("profEmail").value;
+
+    document.getElementById("displayNama").innerText = nama;
+    document.getElementById("displayEmail").innerText = email;
+
+}
+
+
+/* ==========================
+   PILIH DAN SIMPAN FOTO PROFIL
+========================== */
+
+function previewPhoto(event){
+
+    let file = event.target.files[0];
+
+    if(!file){
+        return;
+    }
+
+    // Pastikan file yang dipilih berupa gambar
+    if(!file.type.startsWith("QQ.jpg")){
+
+        alert("Silakan pilih file gambar.");
+        event.target.value = "";
+        return;
+
+    }
+
+    // Batasi ukuran file awal maksimal 5 MB
+    if(file.size > 5 * 1024 * 1024){
+
+        alert("Ukuran foto maksimal 5 MB. Silakan pilih foto lain.");
+        event.target.value = "";
+        return;
+
+    }
+
+    let reader = new FileReader();
+
+    reader.onload = function(e){
+
+        let image = new Image();
+
+        image.onload = function(){
+
+            // Mengecilkan gambar agar tidak memenuhi penyimpanan browser
+            let canvas = document.createElement("canvas");
+
+            let maxSize = 600;
+            let width = image.width;
+            let height = image.height;
+
+            if(width > height && width > maxSize){
+
+                height = Math.round(height * maxSize / width);
+                width = maxSize;
+
+            } else if(height > maxSize){
+
+                width = Math.round(width * maxSize / height);
+                height = maxSize;
+
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            let context = canvas.getContext("2d");
+
+            context.drawImage(image, 0, 0, width, height);
+
+            // Mengubah foto menjadi JPEG dengan ukuran lebih ringan
+            let photoData = canvas.toDataURL("QQ.jpg", 0.8);
+
+            // Tampilkan foto pada halaman profil
+            document.getElementById("avatarImg").src = photoData;
+
+            // Simpan foto langsung ke profil yang tersimpan
+            try {
+
+                let savedProfile =
+                    localStorage.getItem("userProfile");
+
+                let profile = savedProfile
+                    ? JSON.parse(savedProfile)
+                    : {};
+
+                profile.nama =
+                    document.getElementById("profNama").value.trim();
+
+                profile.kelas =
+                    document.getElementById("profKelas").value.trim();
+
+                profile.email =
+                    document.getElementById("profEmail").value.trim();
+
+                profile.phone =
+                    document.getElementById("profPhone").value.trim();
+
+                profile.alamat =
+                    document.getElementById("profAlamat").value.trim();
+
+                profile.photo = photoData;
+
+                localStorage.setItem(
+                    "userProfile",
+                    JSON.stringify(profile)
+                );
+
+                updateProfileDisplay();
+
+                alert("Foto profil berhasil diganti dan disimpan!");
+
+            } catch(error) {
+
+                alert(
+                    "Foto berhasil ditampilkan, tetapi gagal disimpan. " +
+                    "Coba pilih foto yang lebih kecil."
+                );
+
+            }
+
+        };
+
+        image.onerror = function(){
+
+            alert("Foto tidak dapat dibuka. Silakan pilih gambar lain.");
+            event.target.value = "";
+
+        };
+
+        image.src = e.target.result;
+
+    };
+
+    reader.onerror = function(){
+
+        alert("Foto gagal dibaca. Silakan coba kembali.");
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+/* ==========================  
+   TAMBAH CART  
+========================== */  
+  
+function addToCart(name,price,image){  
+  
+    let size =  
+        document.getElementById("size").value;  
+  
+    if(!size){  
+  
+        alert(  
+            "Silakan pilih ukuran terlebih dahulu di bagian Checkout."  
+        );  
+  
+        document  
+        .getElementById("checkout")  
+        .scrollIntoView({  
+            behavior:"smooth"  
+        });  
+  
+        return;  
+    }  
+  
+  
+    let existing = cart.find(  
+        item =>  
+        item.name === name &&  
+        item.size === size  
+    );  
+  
+  
+    if(existing){  
+  
+        existing.quantity++;  
+  
+    }else{  
+  
+        cart.push({  
+  
+            name:name,  
+  
+            price:Number(price),  
+  
+            image:image,  
+  
+            size:size,  
+  
+            quantity:1  
+  
+        });  
+  
+    }  
+  
+  
+    renderCart();  
+  
+  
+    alert(  
+        name +  
+        " ukuran " +  
+        size +  
+        " berhasil ditambahkan ke keranjang."  
+    );  
+  
+}  
+  
+  
+/* ==========================  
+   RENDER CART  
+========================== */  
+  
+function renderCart(){  
+  
+    const container =  
+        document.getElementById(  
+            "cartContent"  
+        );  
+  
+  
+    if(cart.length === 0){  
+  
+        container.innerHTML = `  
+  
+        <div class="cart-empty">  
+  
+            Keranjang masih kosong.  
+  
+        </div>  
+  
+        `;  
+  
+        return;  
+  
+    }  
+  
+  
+    let html = "";  
+  
+    let total = 0;  
+  
+  
+    cart.forEach((item,index)=>{  
+  
+        let subtotal =  
+            item.price *  
+            item.quantity;  
+  
+  
+        total += subtotal;  
+  
+  
+        html += `  
+  
+        <div class="cart-item">  
+  
+            <img  
+                src="${item.image}"  
+                alt="${item.name}"  
+            >  
+  
+  
+            <div class="cart-info">  
+  
+                <h4>  
+                    ${item.name}  
+                </h4>  
+  
+  
+                <div class="cart-price">  
+  
+                    ${formatRupiah(item.price)}  
+  
+                </div>  
+  
+  
+                <div class="cart-size">  
+  
+                    Size: <strong>  
+                    ${item.size}  
+                    </strong>  
+  
+                </div>  
+  
+            </div>  
+  
+  
+            <div class="quantity">  
+  
+                <button  
+                    onclick="decrease(${index})"  
+                >  
+                    −  
+                </button>  
+  
+  
+                <span>  
+                    ${item.quantity}  
+                </span>  
+  
+  
+                <button  
+                    onclick="increase(${index})"  
+                >  
+                    +  
+                </button>  
+  
+            </div>  
+  
+  
+            <strong>  
+  
+                ${formatRupiah(subtotal)}  
+  
+            </strong>  
+  
+  
+            <button  
+                class="remove"  
+                onclick="removeCart(${index})"  
+            >  
+  
+                Hapus  
+  
+            </button>  
+  
+        </div>  
+  
+        `;  
+  
+    });  
+  
+  
+    html += `  
+  
+    <div class="cart-total">  
+  
+        <h2>  
+  
+            Total: ${formatRupiah(total)}  
+  
+        </h2>  
+  
+  
+        <button  
+            class="btn"  
+            onclick="goCheckout()"  
+        >  
+  
+            Lanjut ke Checkout  
+  
+        </button>  
+  
+    </div>  
+  
+    `;  
+  
+  
+    container.innerHTML = html;  
+  
+}  
+  
+  
+/* ==========================  
+   TAMBAH JUMLAH  
+========================== */  
+  
+function increase(index){  
+  
+    cart[index].quantity++;  
+  
+    renderCart();  
+  
+}  
+  
+  
+/* ==========================  
+   KURANG JUMLAH  
+========================== */  
+  
+function decrease(index){  
+  
+    if(  
+        cart[index].quantity > 1  
+    ){  
+  
+        cart[index].quantity--;  
+  
+    }else{  
+  
+        cart.splice(index,1);  
+  
+    }  
+  
+  
+    renderCart();  
+  
+}  
+  
+  
+/* ==========================  
+   HAPUS CART  
+========================== */  
+  
+function removeCart(index){  
+  
+    if(  
+        confirm(  
+            "Hapus produk dari keranjang?"  
+        )  
+    ){  
+  
+        cart.splice(index,1);  
+  
+        renderCart();  
+  
+    }  
+  
+}  
+  
+  
+/* ==========================  
+   CHECKOUT SCROLL  
+========================== */  
+  
+function goCheckout(){  
+  
+    document  
+        .getElementById("checkout")  
+        .scrollIntoView({  
+            behavior:"smooth"  
+        });  
+  
+}  
+  
+  
+/* ==========================  
+   SEARCH  
+========================== */  
+  
+function searchProduct(){  
+  
+    let keyword =  
+        document  
+        .getElementById("searchInput")  
+        .value  
+        .toLowerCase()  
+        .trim();  
+  
+  
+    document  
+    .querySelectorAll(".product")  
+    .forEach(product=>{  
+  
+        let name =  
+            product  
+            .getAttribute("data-name")  
+            .toLowerCase();  
+  
+  
+        if(  
+            name.includes(keyword)  
+        ){  
+  
+            product.style.display = "";  
+  
+        }else{  
+  
+            product.style.display = "none";  
+  
+        }  
+  
+    });  
+  
+}  
+  
+  
+/* ==========================  
+   FILTER CATEGORY  
+========================== */  
+  
+function filterCategory(category){  
+  
+    document  
+    .querySelectorAll(".product")  
+    .forEach(product=>{  
+  
+        let productCategory =  
+            product.getAttribute(  
+                "data-category"  
+            );  
+  
+  
+        if(  
+            productCategory === category  
+        ){  
+  
+            product.style.display = "";  
+  
+        }else{  
+  
+            product.style.display = "none";  
+  
+        }  
+  
+    });  
+  
+  
+    document  
+        .getElementById("produk")  
+        .scrollIntoView({  
+            behavior:"smooth"  
+        });  
+  
+}  
+  
+  
+/* ==========================  
+   DETAIL PRODUK  
+========================== */  
+  
+function openDetail(  
+    name,  
+    price,  
+    image,  
+    category,  
+    material,  
+    color,  
+    stock  
+){  
+  
+    const params =  
+        new URLSearchParams({  
+  
+            name:name,  
+  
+            price:price,  
+  
+            image:image,  
+  
+            category:category,  
+  
+            material:material,  
+  
+            color:color,  
+  
+            stock:stock  
+  
+        });  
+  
+  
+    window.location.href =  
+        "detail.html?" +  
+        params.toString();  
+  
+}  
+  
+  
+/* ==========================  
+   CREATE ORDER  
+========================== */  
+  
+function createOrder(){  
+  
+    let nama =  
+        document  
+        .getElementById("nama")  
+        .value  
+        .trim();  
+  
+  
+    let kelas =  
+        document  
+        .getElementById("kelas")  
+        .value  
+        .trim();  
+  
+  
+    let whatsapp =  
+        document  
+        .getElementById("whatsapp")  
+        .value  
+        .trim();  
+  
+  
+    let alamat =  
+        document  
+        .getElementById("alamat")  
+        .value  
+        .trim();  
+  
+  
+    let size =  
+        document  
+        .getElementById("size")  
+        .value;  
+  
+  
+    let payment =  
+        document.querySelector(  
+            'input[name="payment"]:checked'  
+        ).value;  
+  
+  
+    if(!nama){  
+  
+        alert(  
+            "Nama lengkap harus diisi."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    if(!kelas){  
+  
+        alert(  
+            "Kelas harus diisi."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    if(!whatsapp){  
+  
+        alert(  
+            "Nomor WhatsApp harus diisi."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    if(!alamat){  
+  
+        alert(  
+            "Alamat harus diisi."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    if(cart.length === 0){  
+  
+        alert(  
+            "Keranjang masih kosong. Silakan pilih produk terlebih dahulu."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    if(!size){  
+  
+        alert(  
+            "Silakan pilih ukuran / size."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    let total = 0;  
+  
+  
+    cart.forEach(item=>{  
+  
+        total +=  
+            item.price *  
+            item.quantity;  
+  
+    });  
+  
+  
+    let orderNumber =  
+        "KOP-" +  
+        Date.now()  
+        .toString()  
+        .slice(-6);  
+  
+  
+    let orderData = {  
+  
+        orderNumber:orderNumber,  
+  
+        nama:nama,  
+  
+        kelas:kelas,  
+  
+        whatsapp:whatsapp,  
+  
+        alamat:alamat,  
+  
+        payment:payment,  
+  
+        total:total,  
+  
+        items:cart  
+  
+    };  
+  
+  
+    localStorage.setItem(  
+        "lastOrder",  
+        JSON.stringify(orderData)  
+    );  
+  
+  
+    let productText = "";  
+  
+  
+    cart.forEach((item,index)=>{  
+  
+        let subtotal =  
+            item.price *  
+            item.quantity;  
+  
+  
+        productText +=  
+  
+        (index + 1) +  
+        ". " +  
+        item.name +  
+        " | Size " +  
+        item.size +  
+        " | " +  
+        item.quantity +  
+        " pcs | " +  
+        formatRupiah(subtotal) +  
+        "\n";  
+  
+    });  
+  
+  
+    let nomorTujuan =  
+        "6288220423371";  
+  
+  
+    let pesan =  
+  
+`Halo Koperasi Sekolah 👋  
+  
+Saya telah berhasil melakukan checkout.  
+  
+📋 DATA PEMESANAN  
+  
+Nomor Pesanan:  
+${orderNumber}  
+  
+Nama:  
+${nama}  
+  
+Kelas:  
+${kelas}  
+  
+Nomor WhatsApp:  
+${whatsapp}  
+  
+Alamat:  
+${alamat}  
+  
+🛍️ PRODUK YANG DI CHECKOUT  
+  
+${productText}  
+💰 Total:  
+${formatRupiah(total)}  
+  
+💳 Metode Pembayaran:  
+${payment}  
+  
+Mohon pesanan saya diproses.  
+  
+Terima kasih.`;  
+  
+  
+    document  
+        .getElementById(  
+            "successOrder"  
+        )  
+        .innerText =  
+        "Nomor Pesanan: " +  
+        orderNumber;  
+  
+  
+    document  
+        .getElementById(  
+            "successOverlay"  
+        )  
+        .classList.add("show");  
+  
+  
+    let whatsappURL =  
+        "https://wa.me/" +  
+        nomorTujuan +  
+        "?text=" +  
+        encodeURIComponent(pesan);  
+  
+  
+    cart = [];  
+  
+    renderCart();  
+  
+  
+    setTimeout(function(){  
+  
+        window.open(  
+            whatsappURL,  
+            "_blank"  
+        );  
+  
+    },700);  
+  
+}  
+  
+  
+/* ==========================  
+   CLOSE SUCCESS  
+========================== */  
+  
+function closeSuccess(){  
+  
+    document  
+        .getElementById(  
+            "successOverlay"  
+        )  
+        .classList.remove("show");  
+  
+  
+    document  
+        .getElementById(  
+            "checkout"  
+        )  
+        .scrollIntoView({  
+            behavior:"smooth"  
+        });  
+  
+}  
+  
+</script>  </body>  
+</html> 
